@@ -10,8 +10,11 @@ def get_all_skus():
     """ Returns all the SKU's names which are available in the database.
     """
     sku_ids = set()
-    for i in sku_database.find({}, {"_id": 0, "SKU_id": 1}):
-        sku_ids.add(i["SKU_id"])
+    for sku_id in sku_database.find({}, {"_id": 0, "SKU_id": 1}):
+        if sku_id.get("SKU_id"):
+            sku_ids.add(sku_id["SKU_id"])
+        else:
+            continue
 
     return list(sku_ids)
 
@@ -26,9 +29,14 @@ def get_sku_id(sku_id, status, start_time, end_time):
             end_time (str): End time for comparing
     """
     all_data = []
+    if not (sku_id, status, start_time, end_time):
+        return all_data
+
     for i in sku_database.find({"SKU_id": sku_id, "Status": status}, {"_id": 0}):
         if start_time < i["Time_stamp"] < end_time:
             all_data.append(i)
+        else:
+            continue
 
     return all_data
 
@@ -39,6 +47,9 @@ def get_status_of_id(sku_id):
         Args:
             sku_id (int): SKU unique number
     """
+    if not sku_id:
+        return None
+
     status_query = list(sku_database.find({"SKU_unit": int(sku_id)}, {'_id': 0, 'Status': 1}))
     status = status_query[0]["Status"]
     return status
@@ -53,6 +64,9 @@ def get_status_skus(sku_list, status):
             status (str): Status of the SKU, i-e Good or Bad
     """
     values = []
+    if not (sku_list, status):
+        return values
+
     for sku_id in sku_list:
         status_query = list(sku_database.find({"SKU_unit": int(sku_id), "Status": status}, {'_id': 0, 'Status': 1}))
         if status_query:

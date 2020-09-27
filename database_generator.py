@@ -8,11 +8,11 @@ import random
 SKU_names = ["bottle_100ml", "bottle_50ml", "bottle_25ml"]
 # Generating 90% of good items and 10% of bad items as per the requirement.
 Status = ["Good"] * 90 + ["Bad"] * 10
-unit = 0
 all_data = []
 
 
 def generate_data():
+    unit = 0
     pymongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
     database = pymongo_client["mydatabase"]
     sku_db = database["SKU_database"]
@@ -31,8 +31,8 @@ def generate_data():
 
     print("Adding all data to the database")
     sku_db.insert_many(all_data)
-    print(sku_db)
     print("Data insertion completed..")
 
 
-generate_data()
+if __name__ == '__main__':
+    generate_data()
