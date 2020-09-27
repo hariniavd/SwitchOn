@@ -1,0 +1,54 @@
+Dependencies of the Project:
+
+1. Python 3
+2. PyQt5
+3. MongoDb
+4. QtChart
+5. pandas
+
+
+*** Python 3 ***
+* The main advantage of Python 3 is that it is on the cutting edge, so all the new features will be implemented in
+there rather than being added to Python 2.
+* Python 3 is more consistent language.
+* Python 3 is the present and future of the language.
+* Latest version of Python 3 has been used in this project with latest technologies.
+
+*** PyQt5: ***
+
+* Qt is set of cross-platform C++ libraries that implement high-level APIs for accessing many aspects of modern desktop
+and mobile systems. These include location and positioning services, multimedia, NFC and Bluetooth connectivity, a
+Chromium based web browser, as well as traditional UI development.
+* PyQt5 is a comprehensive set of Python bindings for Qt v5. It is implemented as more than 35 extension modules and
+enables Python to be used as an alternative application development language to C++ on all supported platforms including
+iOS and Android.
+* PyQt5 may also be embedded in C++ based applications to allow users of those applications to configure or enhance the
+ functionality of those applications.
+
+Please use the below command to install PyQt5 binding:
+- pip install PyQt5
+
+*** MongoDb ***
+
+* One single main benefit it has over MySQL is its ability to handle large unstructured data.
+* It is magically faster. People are experiencing real world MongoDB performance mainly because it allows users to query
+ in a different manner that is more sensitive to workload.
+
+Please use the below command to install pymongo binding:
+- pip install pymongo
+
+*** QtChart ***
+
+* PyQtChart is a set of Python bindings for The Qt Company’s Qt Charts library.
+* The bindings sit on top of PyQt5 and are implemented as a single module.
+
+Please use the below command to install pymongo binding:
+- pip install PyQtChart
+
+*** pandas ***
+* Pandas is a high-level data manipulation tool.
+* It is built on the Numpy package and its key data structure is called the DataFrame.
+* DataFrames allow you to store and manipulate tabular data in rows of observations and columns of variables.
+
+Please use the below command to install pymongo binding:
+- pip install pandas

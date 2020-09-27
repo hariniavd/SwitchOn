@@ -19,3 +19,16 @@ Image Gallery Tab:
 - When Image Gallery Tab is open, images are displayed in a Grid layout.
 - There are options to filter All, Good and Bad items respectively.
 - On click of an image, a dialog box appears which has the selected image
+
+
+# SetUp Instructions:
+
+In this project we have used mongodb database, and PyQt5 for UI designing and python 3.
+
+- To setup the database, first we have to install pymongo for updating and retrieving data.
+- This repository has a "database_generator.py" file which generates the database with the random values.
+- We have to use this syntax in python installed terminal: run python database_generator.py
+- This creates the database for different SKU's with different status and time stamp.
+- Once the data is generated, we can use the switchOn tool, to run the tool we have run the above command:
+python run_application.py
+
